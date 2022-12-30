@@ -76,48 +76,48 @@ $(document).ready(function(){
     var v = $("#amountA").val();
     var vY = v * 12;
     if(vY > 1200000) {
-      $("#result").html('<strong id="total" ></strong> <table class="table table-bordered table-striped text-center mt-6" style="width:100%; max-width: 900px; text-align:right;"><thead><tr><th width="33%">Monthly Salary (Annual Salary/12)</th><th width="20%">Rate (%)</th><th>Tax</th></tr></thead><tbody id="tb"></tbody></table>');
+      $("#result").html('<strong id="total" ></strong> <table class="table table-bordered table-striped text-center mt-6" style="width:100%; max-width: 900px; text-align:right;"><thead><tr><th width="33%">Annual Salary</th><th width="33%">Monthly Salary </th><th width="20%">Rate (%)</th><th>Tax</th></tr></thead><tbody id="tb"></tbody></table>');
       if(vY >= 3700000) {
         var tt = (vY - 3700000) * 36 / 100;
-        $("#tb").prepend('<tr><td>Above 4,200,000/12</td><td>36</td><td>LKR '+(tt/12).toFixed(2).toLocaleString("en")+'</td></tr>');
+        $("#tb").prepend('<tr><td>Above LKR 4,200,000</td><td>Above LKR 350,000	</td><td>36%</td><td>LKR '+(tt/12).toFixed(2).toLocaleString("en")+'</td></tr>');
         t += tt;
       }
       if(vY > 3200000) {
         var l = (vY > 3700000)? 3700000:vY;
         var tt = (l - 3200000) * 30 / 100;
-        $("#tb").prepend('<tr><td>5th 500,000/12</td><td>30</td><td>LKR '+(tt/12).toFixed(2).toLocaleString("en")+'</td></tr>');
+        $("#tb").prepend('<tr><td>5th LKR 500,000</td><td>5th  ~ LKR 41,700</td><td>30%</td><td>LKR '+(tt/12).toFixed(2).toLocaleString("en")+'</td></tr>');
         t += tt;
       }
       if(vY > 2700000) {
         var l = (vY > 3200000)? 3200000:vY;
         var tt = (l - 2700000) * 24 / 100;
-        $("#tb").prepend('<tr><td>4th 500,000/12</td><td>24</td><td>LKR '+(tt/12).toFixed(2).toLocaleString("en")+'</td></tr>');
+        $("#tb").prepend('<tr><td>4th LKR 500,000</td><td>4th  ~ LKR 41,700</td><td>24%</td><td>LKR '+(tt/12).toFixed(2).toLocaleString("en")+'</td></tr>');
         t += tt;
       }
       if(vY > 2200000) {
         var l = (vY > 2700000)? 2700000:vY;
         var tt = (l - 2200000) * 18 / 100;
-        $("#tb").prepend('<tr><td>3rd 500,000/12</td><td>18</td><td>LKR '+(tt/12).toFixed(2).toLocaleString("en")+'</td></tr>');
+        $("#tb").prepend('<tr><td>3rd LKR 500,000</td><td>3rd  ~ LKR 41,700</td><td>18%</td><td>LKR '+(tt/12).toFixed(2).toLocaleString("en")+'</td></tr>');
         t += tt;
       }
       if(vY > 1700000) {
         var l = (vY > 2200000)? 2200000:vY;
         var tt = (l - 1700000) * 12 / 100;
-        $("#tb").prepend('<tr><td>2nd 500,000/12</td><td>12</td><td>LKR '+(tt/12).toFixed(2).toLocaleString("en")+'</td></tr>');
+        $("#tb").prepend('<tr><td>2nd LKR 500,000</td><td>2nd  ~ LKR 41,700</td><td>12%</td><td>LKR '+(tt/12).toFixed(2).toLocaleString("en")+'</td></tr>');
         t += tt;
       }
       if(vY > 1200000) {
         var l = (vY > 1700000)? 1700000:vY;
         var tt = (l - 1200000) * 6 / 100;
-        $("#tb").prepend('<tr><td>1st 500,000/12</td><td>6</td><td>LKR '+(tt/12).toFixed(2).toLocaleString("en")+'</td></tr>');
+        $("#tb").prepend('<tr><td>1st LKR 500,000</td><td>1st  ~ LKR 41,700</td><td>6%</td><td>LKR '+(tt/12).toFixed(2).toLocaleString("en")+'</td></tr>');
         t += tt;
       }
       if(vY > 0) {
         var tt = 0;
-        $("#tb").prepend('<tr><td>Up to 1,200,000/12</td><td>Relief</td><td>-</td></tr>');
+        $("#tb").prepend('<tr><td>Up to LKR 1,200,000/12</td><td>Up to LKR 1,000,00</td><td>No Tax</td><td>-</td></tr>');
         t += tt;
       }
-      $("#tb").append('<tr><td colspan="2"><strong>Total</strong></td><td><strong>LKR '+(t/12).toFixed(2).toLocaleString("en")+'</strong></td></tr>');
+      $("#tb").append('<tr><td></td><td colspan="2"><strong>Total</strong></td><td><strong>LKR '+(t/12).toFixed(2).toLocaleString("en")+'</strong></td></tr>');
       $("#total").append('<h3 class="text-center mb-4" >Total TAX amaount LKR '+(t/12).toFixed(2).toLocaleString("en")+'</h3>');
 
     } else {
@@ -233,6 +233,12 @@ function calProcess(returnJSON) {
 		#best_web img {
 			max-width:80px !important;
 		}
+	}
+  @media (max-width: 400px) {
+		.container{
+        padding: 0px 0px;
+       
+    }
 	}
 	</style>  
 </div>
