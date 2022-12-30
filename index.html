@@ -6,10 +6,6 @@
 <meta name="keywords" content="Tax Calculator">
 <meta name="description" content="Tax calculate website in Sri Lanka">
 <meta name="Copyright" content="© 2022">
-<meta name="BLUB" content="ALL">
-<meta name="BLUB" content="INDEX, FOLLOW">
-<meta name="GOOGLEBOT" content="NOARCHIVE">
-<meta name="Revisit-After" content="7 Days">
 
 <title>Srilanka Tax Calculator</title>
 <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
@@ -114,7 +110,7 @@ $(document).ready(function(){
       }
       if(vY > 0) {
         var tt = 0;
-        $("#tb").prepend('<tr><td>Up to LKR 1,200,000</td><td id="monthly" >Up to LKR 1,000,00</td><td> - </td><td>No Tax</td></tr>');
+        $("#tb").prepend('<tr><td>Up to LKR 1,200,000</td><td id="monthly" >Up to LKR 100,000</td><td> - </td><td>No Tax</td></tr>');
         t += tt;
       }
       $("#tb").append('<tr><td id="monthly" ></td><td colspan="2"><strong>Total</strong></td><td><strong>LKR '+(t/12).toFixed(2).toLocaleString("en")+'</strong></td></tr>');
