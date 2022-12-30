@@ -76,7 +76,7 @@ $(document).ready(function(){
     var v = $("#amountA").val();
     var vY = v * 12;
     if(vY > 1200000) {
-      $("#result").html('<strong id="total" ></strong> <table class="table table-bordered table-striped text-center mt-6" style="width:100%; max-width: 900px; text-align:right;"><thead><tr><th width="33%">Annual Salary</th><th id="monthly" width="33%">Monthly Salary </th><th width="20%">Rate (%)</th><th>Tax</th></tr></thead><tbody id="tb"></tbody></table>');
+      $("#result").html('<strong id="total" ></strong> <table class="table table-bordered table-striped text-center mt-6" style="width:100%; max-width: 900px; text-align:right;"><thead><tr><th width="33%">Annual Salary</th><th id="monthly" width="33%">Monthly Salary </th><th width="20%">Rate (%)</th><th>Tax(monthly)</th></tr></thead><tbody id="tb"></tbody></table>');
       if(vY >= 3700000) {
         var tt = (vY - 3700000) * 36 / 100;
         $("#tb").prepend('<tr><td>Above LKR 4,200,000</td><td id="monthly" >Above LKR 350,000	</td><td>36%</td><td>LKR '+(tt/12).toFixed(2).toLocaleString("en")+'</td></tr>');
@@ -114,11 +114,11 @@ $(document).ready(function(){
       }
       if(vY > 0) {
         var tt = 0;
-        $("#tb").prepend('<tr><td>Up to LKR 1,200,000</td><td id="monthly" >Up to LKR 1,000,00</td><td>No Tax</td><td>-</td></tr>');
+        $("#tb").prepend('<tr><td>Up to LKR 1,200,000</td><td id="monthly" >Up to LKR 1,000,00</td><td> - </td><td>No Tax</td></tr>');
         t += tt;
       }
       $("#tb").append('<tr><td id="monthly" ></td><td colspan="2"><strong>Total</strong></td><td><strong>LKR '+(t/12).toFixed(2).toLocaleString("en")+'</strong></td></tr>');
-      $("#total").append('<h3 class="text-center mb-4" >Total TAX amaount LKR '+(t/12).toFixed(2).toLocaleString("en")+'</h3>');
+      $("#total").append('<h3 class="text-center mb-4" >Total Monthly TAX Amaount - LKR '+(t/12).toFixed(2).toLocaleString("en")+'</h3>');
 
     } else {
       $("#result").html('<h3 class="text-center mb-4" >No TAX for You My Friend </h3> <img class="center" src="https://www.pngkey.com/png/full/236-2360965_svg-royalty-free-download-taxes-clipart-tax-season.png" alt="Tax Free" width="280" height="120"> ');
